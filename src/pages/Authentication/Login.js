@@ -147,7 +147,7 @@ class Login extends Component {
                                             <Col lg={7}>
                                                 <div>
                                                     <div className="text-center">
-                                                        <h4 className="login-title-font">Entrar</h4>
+                                                        <h4 className="login-title-font">Login</h4>
                                                         <p className="login-title-content">Para começar nossa jornada, selecione o tipo de plano que você gostaria de experimentar</p>
                                                     </div>
 
