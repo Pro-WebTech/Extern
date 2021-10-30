@@ -1,0 +1,24 @@
+version: v1.0
+name: Netlity Deploy
+agent:
+  machine:
+    type: e1-standard-2
+    os_image: ubuntu1804
+blocks:
+  - name: 'Block #1'
+    dependencies: []
+    task:
+      jobs:
+        - name: 'Job #1'
+          commands: []
+promotions:
+  - name: Deploy to Dev
+    pipeline_file: pipeline_2.yml
+    auto_promote:
+      when: branch = 'main'
+  - name: Deploy to stage
+    pipeline_file: pipeline_3.yml
+    auto_promote:
+      when: tag =~ '.*RELEASE.*'
+  - name: Deploy to Production
+    pipeline_file: pipeline_4.yml

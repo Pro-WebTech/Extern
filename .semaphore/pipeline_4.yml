@@ -1,0 +1,23 @@
+version: v1.0
+name: Netlity Deploy
+agent:
+  machine:
+    type: e1-standard-2
+    os_image: ubuntu1804
+blocks:
+  - name: Deploy to Prodcution
+    task:
+      env_vars:
+        - name: REACT_APP_BACKENDURL
+          value: https://audit.dataseedlabs.com
+      jobs:
+        - name: Deploy
+          commands:
+            - checkout
+            - npm install netlify-cli -g
+            - yarn install
+            - yarn build
+            - netlify deploy --dir=build --build
+            - netlify deploy --dir=build --prod
+      secrets:
+        - name: netlify-authentication-live

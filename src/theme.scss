@@ -1,0 +1,136 @@
+//Import Icon scss
+@import "./assets/scss/icons.scss";
+//import Light Theme
+@import "./assets/scss/bootstrap.scss";
+@import "./assets/scss/app.scss";
+
+//Import Dark theme
+// @import "./assets/scss/bootstrap-dark.scss";
+// @import "./assets/scss/app-dark.scss";
+
+// RTL mode
+// @import "./assets/scss/bootstrap.scss";
+// @import "./assets/scss/app-rtl.scss";
+
+.error {
+  border: 1px solid red;
+}
+
+
+.MuiAutocomplete-inputRoot[class*="MuiOutlinedInput-root"] {
+  padding: 0px !important;
+}
+
+.MuiFormControl-root label {
+  margin-top: -8px !important;
+}
+
+button.close {
+  position: absolute !important;
+  margin-left: 10px !important;
+}
+
+.accordian-bg-products {
+  background-color: $gray-300;
+}
+
+.nav-link {
+  cursor: pointer;
+}
+
+.dataTables_filter, .dataTables_paginate {
+  float: right;
+
+  .pagination {
+    .page-link {
+      border-radius: 30px !important;
+      margin: 0 3px;
+      border: none;
+      text-align: center;
+      cursor: pointer;
+    }
+  }
+}
+
+.rdw-editor-main {
+  border: 1px solid $gray-300;
+  height: 239px;
+}
+
+.dz-message {
+  text-align: center;
+  padding: 100px;
+}
+
+.react-datepicker-wrapper {
+  width: 100% !important;
+}
+
+.ReactModal__Overlay {
+  z-index: 1001 !important;
+}
+
+.rangeslider__fill {
+  background-color: $primary !important;
+}
+
+.react-bootstrap-table {
+  padding-top: 0px !important;
+}
+
+.square-switch {
+  .react-switch-bg {
+    border-radius: 5px !important;
+  }
+}
+
+input[type="range"] {
+  -webkit-appearance: auto !important;
+}
+
+.chat-conversation-height {
+  min-height: 500px;
+}
+
+.expand-cell {
+  cursor: pointer !important;
+}
+
+.navbar-brand-box {
+  background-color: rgb(23, 39, 85) !important;
+}
+
+.btn-box {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 8px 14px;
+
+  position: absolute;
+  height: 40px;
+  right: 322px;
+  top: calc(50% - 40px / 2);
+
+  /* accentColor */
+
+  background: #B57C3D;
+  border-radius: 4px;
+}
+
+.vertical-line {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  // position: absolute;
+  width: 40px;
+  height: 0px;
+  margin-top: 30px;
+  /* complementaryLightGrey */
+
+  border: 1px solid #C4CFDB;
+  transform: rotate(90deg);
+}
+
+.logo-sm {
+  margin-left: -13px !important;
+}
