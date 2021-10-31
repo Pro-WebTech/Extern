@@ -20,7 +20,7 @@ class Login extends Component {
 
     constructor(props) {
         super(props);
-        this.state = { username: "admin@dataseed.de", password: "dataseed2021" }
+        this.state = { username: "admin@gmail.com", password: "123456" }
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
@@ -53,8 +53,8 @@ class Login extends Component {
                                     <div className="top-canva">
                                         <center className="h-100">
                                             <div className="top-canva-content d-flex">
-                                                <div className="A-canva">A</div>
-                                                <div className="A-canva-title">Audit</div>
+                                                <div className="A-canva">P</div>
+                                                <div className="A-canva-title">Extern</div>
                                             </div>
                                         </center>
 
@@ -118,10 +118,11 @@ class Login extends Component {
                                     </div>
                                     <div className="title-box">
                                         <div className="title-one">
-                                            Auditoria digital <br />de forma inteligente
+                                            Welcome<br />      
                                         </div>
+                                        <Row></Row>
                                         <div className="title-content">
-                                            Auditoria digital utilizando Machine Learning e Analise de dados em um sistema contábil completo!
+                                            This site is for students who want to join in medical extern in <br/>your free time
                                         </div>
                                     </div>
 
@@ -134,9 +135,9 @@ class Login extends Component {
                                 </div>
                             </div>
                             <div className="top-font">
-                                Ainda não é cliente?
+                                Do you have an account?
                                 <span>
-                                    <a href="/" className="pl-2"> Experimente o Audit grátis</a>
+                                    <a href="/register" className="pl-2"> Register</a>
                                 </span>
 
                             </div>
@@ -147,8 +148,8 @@ class Login extends Component {
                                             <Col lg={7}>
                                                 <div>
                                                     <div className="text-center">
-                                                        <h4 className="login-title-font">LLOOGGIINN</h4>
-                                                        <p className="login-title-content">Para começar nossa jornada, selecione o tipo de plano que você gostaria de experimentar</p>
+                                                        <h4 className="login-title-font">Login</h4>
+                                                        <p className="login-title-content">Sign in to continue to Extern Finder.</p>
                                                     </div>
 
                                                     {/* {this.props. && this.props. ? <Alert color="danger">{this.props.loginError}</Alert> : null} */}
@@ -157,13 +158,13 @@ class Login extends Component {
                                                     <div className="p-2 mt-2">
                                                         <AvForm className="form-horizontal" onValidSubmit={this.handleSubmit} >
                                                             <div className="name-form-font">
-                                                                Usuário
+                                                                Username
                                                             </div>
                                                             <FormGroup className="">
                                                                 <AvField autoFocus name="username" value={this.state.username} type="text" className=" auth-form-style" id="username" validate={{ email: true, required: true }} placeholder="Entre com seu usuário" />
                                                             </FormGroup>
                                                             <div className="name-form-font">
-                                                                Senha
+                                                                Password
                                                             </div>
                                                             <FormGroup className="">
                                                                 <AvField name="password" value={this.state.password} type="password" className="auth-form-style" id="userpassword" placeholder="Digite sua senha de acesso" />
@@ -171,24 +172,24 @@ class Login extends Component {
 
                                                             <div className="custom-control custom-checkbox">
                                                                 <Input type="checkbox" className="custom-control-input remember-check" id="customControlInline" />
-                                                                <Label className="custom-control-label remember-font" htmlFor="customControlInline">Lembrar de mim</Label>
-                                                                <Link to="/forgot-password" className="forget-password float-right">Esqueceu sua senha?</Link>
+                                                                <Label className="custom-control-label remember-font" htmlFor="customControlInline">Remember me</Label>
+                                                                <Link to="/forgot-password" className="forget-password float-right">Forgot your password?</Link>
                                                             </div>
 
                                                             <div className="mt-4 text-center">
-                                                                <Button color="info" className="w-100 login-submit" type="submit">Fazer Log In</Button>
+                                                                <Button color="info" className="w-100 login-submit" type="submit">Log In</Button>
                                                             </div>
 
                                                             <Row className="mt-4 m-1 text-center">
                                                                 <Col className="line-center">
                                                                 </Col>
                                                                 <Col style={{ fontSize: "16px" }}>
-                                                                    ou efetue o login   com
+                                                                © 2021 Extern Finder
                                                                 </Col>
                                                                 <Col className="line-center">
                                                                 </Col>
                                                             </Row>
-                                                            <Row className="mt-5">
+                                                            {/* <Row className="mt-5">
                                                                 <Col>
                                                                     <div className="icon-style float-left">
                                                                         <center>
@@ -213,7 +214,7 @@ class Login extends Component {
                                                                         </center>
                                                                     </div>
                                                                 </Col>
-                                                            </Row>
+                                                            </Row> */}
                                                         </AvForm>
                                                     </div>
                                                 </div>

@@ -1,128 +1,66 @@
-import React, { Component } from "react";
-import { Row, Col, Button, Alert, Container, Label, FormGroup } from "reactstrap";
-
-// availity-reactstrap-validation
-import { AvForm, AvField } from "availity-reactstrap-validation";
-
-// action
-import {  registerUser, registerUserFailed, apiError } from '../../store/actions';
-
-// Redux
-import { connect } from "react-redux";
-import { Link } from "react-router-dom";
-
-
-class Register extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-        email: "",
-        username: "",
-        password: ""
-    }
-    this.handleSubmit = this.handleSubmit.bind(this);
-}
-
-handleSubmit(event, values) {
-    this.props.registerUser(values)
-}
-
-  componentDidMount()
-  {
-    this.props.registerUserFailed("");
-    this.props.apiError("");
-    document.body.classList.add("auth-body-bg");
-  }
-
-
+import React from "react";
+import { Jumbotron, Container, Row, Col, Card, CardGroup, CardText, CardBody } from "reactstrap"
+import "../../assets/css/custom/register-page.css"
+import { Link } from 'react-router-dom';
+class Register extends React.Component {
   render() {
     return (
-      <React.Fragment>
-        <div className="home-btn d-none d-sm-block">
-            <Link to="/"><i className="mdi mdi-home-variant h2 text-white"></i></Link>
-        </div>
-        <div>
-            <Container fluid className="p-0">
-                <Row className="no-gutters">
-                    <Col lg={4}>
-                        <div className="authentication-page-content p-4 d-flex align-items-center min-vh-100">
-                            <div className="w-100">
-                                <Row className="justify-content-center">
-                                    <Col lg={9}>
-                                        <div>
-                                            <div className="text-center">
-                                                {/* <div>
-                                                    <Link to="#" className="logo"><img src={logodark} height="20" alt="logo"/></Link>
-                                                </div> */}
+      <Container className="mt-5 text-center">
+        <Row>
+          <Col>
+            <Jumbotron className="p-0 main-box">
+              <h2 className="display-4 my-5 py-5 text-white">Welcome to Externship Finder</h2>
+              <div className="my-5 text-white">
+                <p className="select-font">Select account type</p>
+              </div>
+              <CardGroup>
 
-                                                <h4 className="font-size-18 mt-4">Register account</h4>
-                                                <p className="text-muted">Get your free RECUITABLE account now.</p>
-                                            </div>
+                <Card>
+                  <Link to="/studentregister">
+                    <div className="justify-content-center d-flex card-img-box pt-4">
+                      <img src="https://img.pngio.com/white-graduation-hat-png-graduation-cap-icon-png-free-png-images-graduation-cap-icon-png-920_960.png" className="card-img-student" alt="..." />
+                    </div>
+                    <CardBody>
+                      <h5 className="card-text card-name">Student</h5>
+                      <CardText>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</CardText>
+                      <CardText><small className="text-muted">Last updated 3 mins ago</small></CardText>
+                    </CardBody>
+                  </Link>
 
-                                            {this.props.user && <Alert color="success">Registration Done Successfully.</Alert>}
+                </Card>
+                <Card>
+                  <Link to="/employerregister">
+                    <div className="justify-content-center d-flex card-img-box">
+                      <img src="https://thumbs.dreamstime.com/b/customer-customer-icon-147072097.jpg" className="card-img-employer" alt="..." />
+                    </div>
+                    <CardBody>
+                      <h5 className="card-text card-name">Employer</h5>
+                      <CardText>This card has supporting text below as a natural lead-in to additional content.</CardText>
+                      <CardText><small className="text-muted">Last updated 3 mins ago</small></CardText>
+                    </CardBody>
+                  </Link>
+                </Card>
+                <Card>
+                  <Link to="/schoolregister">
+                    <div className="justify-content-center d-flex card-img-box pt-2">
+                      <img src="https://illustoon.com/photo/2878.png" className="card-img-school" alt="..." />
+                    </div>
+                    <CardBody>
+                      <h5 className="card-text card-name">School</h5>
+                      <CardText>This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</CardText>
+                      <CardText><small className="text-muted">Last updated 3 mins ago</small></CardText>
+                    </CardBody>
+                  </Link>
+                </Card>
+              </CardGroup>
+            </Jumbotron>
 
-                                            {this.props.registrationError && <Alert color="danger">{this.props.registrationError}</Alert>}
+          </Col>
 
-                                            <div className="p-2 mt-5">
-                                                <AvForm onValidSubmit={this.handleSubmit} className="form-horizontal" >
-
-                                                    <FormGroup className="auth-form-group-custom mb-4">
-                                                        <i className="ri-mail-line auti-custom-input-icon"></i>
-                                                        <Label htmlFor="useremail">Email</Label>
-                                                        <AvField name="email"  value={this.state.email} validate={{email: true, required: true}} type="email" className="form-control" id="useremail" placeholder="Enter email"/>
-                                                    </FormGroup>
-
-                                                    <FormGroup className="auth-form-group-custom mb-4">
-                                                        <i className="ri-user-2-line auti-custom-input-icon"></i>
-                                                        <Label htmlFor="username">Username</Label>
-                                                        <AvField name="username"  value={this.state.username} type="text" className="form-control" id="username" placeholder="Enter username"/>
-                                                    </FormGroup>
-
-                                                    <FormGroup className="auth-form-group-custom mb-4">
-                                                        <i className="ri-lock-2-line auti-custom-input-icon"></i>
-                                                        <Label htmlFor="userpassword">Password</Label>
-                                                        <AvField name="password"  value={this.state.password} type="password" className="form-control" id="userpassword" placeholder="Enter password"/>
-                                                    </FormGroup>
-
-
-                                                    <div className="text-center">
-                                                        <Button color="primary" className="w-md waves-effect waves-light" type="submit">{this.props.loading ? "Loading ..." : "Register"}</Button>
-                                                    </div>
-
-                                                    <div className="mt-4 text-center">
-                                                        <p className="mb-0">By registering you agree to the Recuitable <Link to="#" className="text-primary">Terms of Use</Link></p>
-                                                    </div>
-                                                </AvForm>
-                                            </div>
-
-                                            <div className="mt-5 text-center">
-                                                <p>Already have an account ? <Link to="/login" className="font-weight-medium text-primary"> Login</Link> </p>
-                                            </div>
-                                        </div>
-
-                                    </Col>
-                                </Row>
-                            </div>
-                        </div>
-                    </Col>
-                    <Col lg={8}>
-                        <div className="authentication-bg">
-                            <div className="bg-overlay"></div>
-                        </div>
-                    </Col>
-                </Row>
-            </Container>
-        </div>
-
-      </React.Fragment>
-    );
+        </Row>
+      </Container>
+    )
   }
 }
 
-const mapStatetoProps = state => {
-
-  const { user, registrationError, loading } = state.Account;
-  return { user, registrationError, loading };
-}
-
-export default connect(mapStatetoProps, { registerUser, apiError, registerUserFailed })(Register);
+export default Register;

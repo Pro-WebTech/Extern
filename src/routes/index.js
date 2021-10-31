@@ -5,6 +5,9 @@ import { Redirect } from "react-router-dom";
 import Login from "../pages/Authentication/Login";
 import Logout from "../pages/Authentication/Logout";
 import Register from "../pages/Authentication/Register";
+import StudentRegister from "../pages/Authentication/StudentRegister";
+import EmployerRegister from "../pages/Authentication/EmployerRegister";
+import SchoolRegister from "../pages/Authentication/SchoolRegister";
 import ForgetPwd from "../pages/Authentication/ForgetPassword";
 import AuthLockScreen from "../pages/Authentication/AuthLockScreen";
 import Profile from "../pages/Authentication/Profile";
@@ -24,6 +27,7 @@ import DetailAuditScreen from "../pages/Audit/DetailAuditScreen";
 
 //Sample
 import FormAdvanced from "../pages/Company/FormAdvanced";
+
 const authProtectedRoutes = [
 
 	{ path: "/dashboard", component: Dashboard},
@@ -50,6 +54,9 @@ const publicRoutes = [
 	{ path: "/forgot-password", component: ForgetPwd },
 	{ path: "/register", component: Register },
 	{ path: "/auth-lock-screen", component: AuthLockScreen },
+	{ path: "/studentregister", component: StudentRegister },
+	{ path: "/employerregister", component: EmployerRegister },
+	{ path: "/schoolregister", component: SchoolRegister }
 
 	// Authentication Inner
 	// { path: "/auth-login", component: Login1 },

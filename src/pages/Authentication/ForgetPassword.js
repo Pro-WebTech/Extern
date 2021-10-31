@@ -141,8 +141,8 @@ class ForgetPasswordPage extends Component {
                                         <Col lg={7}>
                                             <div>
                                                 <div className="text-center">
-                                                    <h4 className="login-title-font">Esqueceu a senha.</h4>
-                                                    <p className="login-title-content">Coloque o seu e-mail</p>
+                                                    <h4 className="login-title-font">Reset Password</h4>
+                                                    <p className="login-title-content">Reset your password to ExternFinder</p>
                                                 </div>
 
                                                 {/* {this.props. && this.props. ? <Alert color="danger">{this.props.loginError}</Alert> : null} */}
@@ -162,14 +162,14 @@ class ForgetPasswordPage extends Component {
                                                                 id="email" 
                                                                 validate={{ email: true, required: true }} 
                                                                 onChange={(e) => this.setState({email: e.target.value})}
-                                                                placeholder="Entre com seu e-mail" />
+                                                                placeholder="Enter e-mail" />
                                                         </FormGroup>
 
                                                         <div className="mt-4 text-center">
-                                                            <Button color="info" className="w-100 login-submit" onClick={this.requestForgetPassword}>Recuperar senha</Button>
+                                                            <Button color="info" className="w-100 login-submit" onClick={this.requestForgetPassword}>Reset</Button>
                                                         </div>
                                                         <div className="mt-4 text-center">
-                                                            <Button color="white" className="w-100 login-submit" onClick={this.backToLogin}>Voltar</Button>
+                                                            <Button color="white" className="w-100 login-submit" onClick={this.backToLogin}>Log In</Button>
                                                         </div>
                                                     </AvForm>
                                                 </div>
