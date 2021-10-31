@@ -117,19 +117,19 @@ removeBodyCss() {
                         </ModalBody>
                         <ModalFooter>
                             <Button
-                            type="button"
-                            onClick={() => this.setState({ modal_standard: false })}
-                            color="light"
-                            className="waves-effect"
+                                type="button"
+                                onClick={() => this.setState({ modal_standard: false })}
+                                color="light"
+                                className="waves-effect"
                             >
-                            Close
-                        </Button>
+                                Close
+                            </Button>
                             <Button
-                            type="button"
-                            color="primary" className="waves-effect waves-light"
+                                type="button"
+                                color="primary" className="waves-effect waves-light"
                             >
-                            Submit
-                        </Button>
+                                Submit
+                            </Button>
                         </ModalFooter>
                     </Modal>
                         <Row>

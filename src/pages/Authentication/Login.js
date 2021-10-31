@@ -133,7 +133,7 @@ class Login extends Component {
                             <div className="top-font">
                                 Do you have an account?
                                 <span>
-                                     <Link to="/register" className="forget-password float-right">Forgot your password?</Link>
+                                    <Link to="/register" className=""> Register</Link>
                                 </span>
 
                             </div>
