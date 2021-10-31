@@ -12,10 +12,6 @@ import { AvForm, AvField } from 'availity-reactstrap-validation';
 // actions
 import { checkLogin, apiError } from '../../store/actions';
 
-// import images
-import google from "../../assets/images/google.png";
-import apple from "../../assets/images/apple.png";
-import facebook from "../../assets/images/facebook.png";
 class Login extends Component {
 
     constructor(props) {
